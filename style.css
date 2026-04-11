@@ -1,4 +1,4 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box; /* This keeps your padding from breaking the width */
@@ -16,7 +16,7 @@ body {
     --text-secondary: #2F6F7E;
     --accent: #2F6F7E;}
     /*dark mode*/
-    body.dark-theme {
+body.dark-theme {
         --bg-main: #0B0C10;
         --nav-bg: #1A1A1A;
         --text-primary:#C2B280;
@@ -35,7 +35,7 @@ body{
     color: var(--text-primary);
     transition: background-color 0.3 ease, color 0.3s ease;
 }
-.main-navbar{.main-nav {
+.main-navbar{
     display: flex;
     justify-content: space-between; /* This creates the gap in the middle */
     align-items: center;            /* Perfectly centers items vertically */
@@ -69,7 +69,7 @@ body{
     text-decoration: none;          /* Removes the underline */
     color: inherit;                 /* Uses the text-primary color */
     font-weight: 600;
-}}
+}
 .nav-links a:hover {
     color: var(--zeus-gold); /* Or your bronze variable in dark mode */
     text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
