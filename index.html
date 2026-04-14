@@ -6,7 +6,6 @@
     <title>Olympus on Trial</title>
     <link rel ="icon" type="image/png" href="assets/olympus.png">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
@@ -18,18 +17,60 @@
             <div class="nav-controls">
                 <ul class="nav-links">
                     <li><a href="#summoning-altar">Summons</a></li>
-                    <li><a href="#hero-court">The Hero Court</a></li>
                     <li><a href="#judgement-court">The Judgement Court</a></li>
-                    <li><a href="#banishing-court">The Banishing Court</a></li>
+                    <li><a href="#hero-court">The Hero Court</a></li>       
                     </ul>
                     <button id="theme-btn">Switch Theme</button>
             </div>
-        </nav>g
+        </nav>
         
         <h1>Olympus Test</h1>
         
             
     </header>
-    
+    <main>
+    <section id="summoning-altar">
+        <div class="altar-box">
+            <h2>Summoning Altar</h2>
+            <form id="hero-form">
+                <input type="text" id="hero-name" placeholder="Hero Name (e.g., Hercules)" required>
+                <input type="text" id="hero-power" placeholder="Power (e.g., Super Strength)" required>
+                <input type="text" id="hero-rank" placeholder="Initial Rank (e.g., Waiting)" required>
+                <button type="submit">Execute Summon</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="judgement-chamber">
+        <h2>Judgement Chamber</h2>
+        <div class="altar-box">
+            <form id="judgement-form">
+                <input type="hidden" id="judge-hero-id">
+                <input type="text" id="judge-hero-name" readonly placeholder="No hero selected...">
+                <select id="judge-action">
+                    <option value="Waiting">Keep in Court</option>
+                    <option value="Olympian">Promote to Olympian</option>
+                    <option value="Demigod">Rank as Demigod</option>
+                    <option value="Titan">Rank as Titan</option>
+                </select>
+                <button type="submit">Deliver Verdict</button>
+            </form>
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="judgement-court">
+        <p class="subtitle">Awaiting Judgement</p>
+        <div id="judgement-list" class="grid-container"></div>
+    </section>
+
+    <section id="hero-court">
+        <p class="subtitle">The Elite Olympians</p>
+        <div id="olympus-list" class="grid-container"></div>
+    </section>
+</main>
+
+ <script src="script.js" defer></script>   
 </body>
 </html>

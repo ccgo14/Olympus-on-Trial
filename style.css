@@ -27,25 +27,27 @@ body.dark-theme {
 .main-navbar{ 
     background-color: var(--nav-bg);
     color: var(--text-primary);
-    transition: background-color 0.3 ease, color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 
 }
 body{
     background-color: var(--bg-main);
     color: var(--text-primary);
-    transition: background-color 0.3 ease, color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 .main-navbar{
     display: flex;
     justify-content: space-between; /* This creates the gap in the middle */
     align-items: center;            /* Perfectly centers items vertically */
     padding: 1rem 2rem;
+     /* Allows items to wrap to the next line on small screens */
+    gap: 10px;       /* Keeps items from touching when they wrap */
     background-color: var(--nav-bg); /* Using your Silver/Charcoal variable */
     color: var(--text-primary);
     position: sticky;               /* Keeps it at the top when you scroll */
     top: 0;
     z-index: 1000;                  /* Ensures it stays above hero cards */
-    transition: all 0.4s ease;      /* Makes the theme swap look cinematic */
+    transition: all 0.3s ease;      /* Makes the theme swap look cinematic */
 }
 
 .nav-brand {
@@ -73,4 +75,129 @@ body{
 .nav-links a:hover {
     color: var(--zeus-gold); /* Or your bronze variable in dark mode */
     text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+}
+@media (max-width: 768px) {
+    .main-navbar {
+        flex-direction: column; /* Stacks logo above the links */
+        padding: 1rem;
+    }
+
+    .nav-links {
+        margin-right: 0;
+        justify-content: center;
+        flex-wrap: wrap; 
+        gap: 10px;
+    }
+
+    .nav-logo {
+        margin-bottom: 10px;
+    }
+
+    .nav-title {
+        font-size: 1.2rem; /* Shrinks text slightly for smaller screens */
+    }
+}
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--accent);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* --- GRID & CARDS --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.hero-card {
+    background-color: var(--nav-bg);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.hero-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+/* --- BUTTON & FORM POLISH --- */
+button {
+    cursor: pointer;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    background-color: var(--text-primary);
+    color: var(--bg-main);
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.banish-btn {
+    background-color: #d9534f;
+    color: white;
+}
+
+.promote-btn {
+    background-color: #5cb85c;
+    color: white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+}
+
+input, select {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+}
+#hero-form input, 
+#judgement-form input {
+    background-color: transparent; 
+    border: 1px solid var(--accent); 
+    color: var(--text-primary);
+    padding: 12px;
+    outline: none; 
+}
+#hero-form input:focus {
+    background-color: rgba(255, 255, 255, 0.05);
 }
