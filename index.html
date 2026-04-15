@@ -17,13 +17,16 @@
             <div class="nav-controls">
                 <ul class="nav-links">
                     <li><a href="#summoning-altar">Summons</a></li>
+                    <li><a href="#judgement-chamber">Judgement Chamber</a></li>
                     <li><a href="#judgement-court">The Judgement Court</a></li>
-                    <li><a href="#hero-court">The Hero Court</a></li>       
+                    <li><a href="#primordials">Primordials</a></li>     
+                    <li><a href="#titans">The Titans</a></li>            
+                    <li><a href="#olympians">The Olympians</a></li>      
                     </ul>
                     <button id="theme-btn">Switch Theme</button>
             </div>
         </nav>
-        
+        <h1 style="text-align: center; margin-top: 2rem; color: var(--accent);">Olympus Test</h1>
         <h1>Olympus Test</h1>
         
             
@@ -33,11 +36,15 @@
         <div class="altar-box">
             <h2>Summoning Altar</h2>
             <form id="hero-form">
-                <input type="text" id="hero-name" placeholder="Hero Name (e.g., Hercules)" required>
-                <input type="text" id="hero-power" placeholder="Power (e.g., Super Strength)" required>
-                <input type="text" id="hero-rank" placeholder="Initial Rank (e.g., Waiting)" required>
-                <button type="submit">Execute Summon</button>
-            </form>
+    <input type="text" id="hero-name" placeholder="Hero Name (e.g., Hercules)" required>
+    <input type="text" id="hero-power" placeholder="Power (e.g., Super Strength)">
+    <input type="text" id="hero-rank" placeholder="Initial Rank (e.g., Waiting)">
+    
+    <div class="button-group" style="display: flex; gap: 10px; margin-top: 10px;">
+        <button type="button" id="search-btn" style="background-color: var(--accent); color: black;">Search Archives</button>
+        <button type="submit" id="submit-btn">Execute Summon</button>
+     </div>
+       </form>
         </div>
     </section>
 
@@ -47,13 +54,15 @@
             <form id="judgement-form">
                 <input type="hidden" id="judge-hero-id">
                 <input type="text" id="judge-hero-name" readonly placeholder="No hero selected...">
+                <input type="text" id="judge-hero-rank" readonly placeholder="Current rank...">
                 <select id="judge-action">
                     <option value="Waiting">Keep in Court</option>
                     <option value="Olympian">Promote to Olympian</option>
-                    <option value="Demigod">Rank as Demigod</option>
+                    <option value="Primordial">Ascend to Primordial</option>
                     <option value="Titan">Rank as Titan</option>
                 </select>
-                <button type="submit">Deliver Verdict</button>
+               <button type="button" onclick="openJudgementChamber()" id="search-verify-btn">VERIFY SOUL</button>
+               <button type="submit">DELIVER VERDICT</button>
             </form>
         </div>
     </section>
@@ -65,11 +74,21 @@
         <div id="judgement-list" class="grid-container"></div>
     </section>
 
-    <section id="hero-court">
-        <p class="subtitle">The Elite Olympians</p>
-        <div id="olympus-list" class="grid-container"></div>
-    </section>
-</main>
+    <section id="primordials">
+            <p class="subtitle">The First Beings (Primordials)</p>
+            <div id="primordials-list" class="grid-container"></div>
+        </section>
+
+        <section id="titans">
+            <p class="subtitle">The Second Generation (Titans)</p>
+            <div id="titans-list" class="grid-container"></div>
+        </section>
+
+        <section id="olympians">
+            <p class="subtitle">The Third Generation (Olympians)</p>
+            <div id="olympus-list" class="grid-container"></div>
+        </section>
+    </main>
 
  <script src="script.js" defer></script>   
 </body>
