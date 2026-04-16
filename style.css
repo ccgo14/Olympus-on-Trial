@@ -44,6 +44,7 @@ body {
 
 .main-navbar {
     display: flex;
+    position: fixed;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
@@ -51,7 +52,7 @@ body {
     backdrop-filter: blur(10px); 
     border-bottom: 2px solid var(--accent);
     color: var(--text-primary);
-    position: sticky;
+    position: sticky; 
     top: 0;
     z-index: 1000;
     transition: all 0.3s ease;
